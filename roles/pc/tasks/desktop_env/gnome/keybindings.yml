@@ -134,7 +134,7 @@
       }
     - {
         key: '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/command',
-        value: 'nautilus /home/"{{ user }}"',
+        value: "'nautilus/{{ home }}'",
       }
 
 - name: gnome | keybindings | screenlock keybinding
