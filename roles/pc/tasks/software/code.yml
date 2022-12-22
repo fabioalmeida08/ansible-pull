@@ -1,0 +1,8 @@
+- name: Execute the command in remote shell; stdout goes to the specified file on the remote
+  ansible.builtin.shell: ln -s /var/lib/snapd/snap /snap
+
+- name: software | code | install package
+  tags: code, packages, workstation-packages
+  snap:
+    name: code
+    classic: true

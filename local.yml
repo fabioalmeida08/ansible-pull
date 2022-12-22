@@ -1,0 +1,16 @@
+- hosts: localhost
+  connection: local
+  become: true
+
+  pre_tasks:
+    - name: pre-run | check requirements
+      tags: always
+      package:
+        name: python-psutil
+        state: latest
+
+- hosts: pc
+  tags: pc
+  become: true
+  roles:
+    - pc

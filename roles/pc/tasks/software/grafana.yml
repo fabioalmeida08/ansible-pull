@@ -1,0 +1,12 @@
+- name: software | grafana | install package
+  tags: grafana, packages, workstation-packages
+  package:
+    name: grafana
+    state: latest
+  
+- name: start grafana service
+  tags: grafana, service
+  service:
+    name: grafana
+    state: started
+    enabled: yes

@@ -1,0 +1,5 @@
+- name: software | docker | install package
+  tags: docker, packages, workstation-packages
+  package:
+    name: docker
+    state: latest

@@ -1,0 +1,12 @@
+- name: software | prometheus | install package
+  tags: prometheus, packages, workstation-packages
+  package:
+    name: prometheus
+    state: latest
+
+- name: start prometheus service
+  tags: prometheus, service
+  service:
+    name: prometheus
+    state: started
+    enabled: yes
