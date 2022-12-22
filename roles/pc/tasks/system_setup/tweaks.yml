@@ -1,5 +1,5 @@
-- name: config pacmac default settings
-  tags: system, pamac,
+- name: config default pamac settings
+  tags: system, pamac
   lineinfile:
     path: '/etc/pamac.conf'
     regexp: '{{ item.regexp }}'
