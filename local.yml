@@ -9,8 +9,10 @@
         name: python-psutil
         state: latest
 
-- hosts: pc
+- hosts: localhost
   tags: pc
   become: true
+  vars:
+    home: 'home/{{ ansible_env.SUDO_USER }}'
   roles:
     - pc
