@@ -1,13 +1,11 @@
 - name: gnome | keybindings | set custom-keybindings
   tags: gnome,keybindings
-  become_user: fabio
   dconf:
     key: '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings'
     value: "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom6/']"
 
 - name: gnome | keybindings | disable default browser key binding
   tags: gnome,keybindings
-  become_user: fabio
   dconf:
     key: '{{ item.key }}'
     value: '{{ item.value }}'
@@ -19,7 +17,6 @@
 
 - name: gnome | keybindings | disable default file manager binding
   tags: gnome,keybindings
-  become_user: fabio
   dconf:
     key: '{{ item.key }}'
     value: '{{ item.value }}'
@@ -31,7 +28,6 @@
 
 - name: gnome | keybindings | disable default email client binding
   tags: gnome,keybindings
-  become_user: fabio
   dconf:
     key: '{{ item.key }}'
     value: '{{ item.value }}'
@@ -43,7 +39,6 @@
 
 - name: gnome | keybindings | disable default terminal key binding
   tags: gnome,keybindings
-  become_user: fabio
   dconf:
     key: '{{ item.key }}'
     value: '{{ item.value }}'
@@ -55,7 +50,6 @@
 
 - name: gnome | keybindings | disable default screenlock key binding
   tags: gnome,keybindings
-  become_user: fabio
   dconf:
     key: '{{ item.key }}'
     value: '{{ item.value }}'
@@ -67,7 +61,6 @@
 
 - name: gnome | keybindings | set terminal keybinding
   tags: gnome,keybindings
-  become_user: fabio
   dconf:
     key: '{{ item.key }}'
     value: '{{ item.value}}'
@@ -87,7 +80,6 @@
 
 - name: gnome | keybindings | set screenshot keybinding
   tags: gnome,keybindings
-  become_user: fabio
   dconf:
     key: '{{ item.key }}'
     value: '{{ item.value}}'
@@ -107,7 +99,6 @@
 
 - name: gnome | keybindings | pavu control keybinding
   tags: gnome,keybindings
-  become_user: fabio
   dconf:
     key: '{{ item.key }}'
     value: '{{ item.value}}'
@@ -125,32 +116,31 @@
         value: "'pavucontrol'",
       }
 
-# - debug:
-#     msg : "{{ lookup('env', 'HOME') }}"
-# - name: gnome | keybindings | nautilus home keybinding
-#   vars:
-#     user: "{{ lookup('env', 'HOME') }}"
-#   tags: gnome,keybindings
-#   dconf:
-#     key: '{{ item.key }}'
-#     value: '{{ item.value}}'
-#   with_items:
-#     - {
-#         key: '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/name',
-#         value: "'Nautilus'",
-#       }
-#     - {
-#         key: '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/binding',
-#         value: "'<Super>f'",
-#       }
-#     - {
-#         key: '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/command',
-#         value: nautilus "{{ user }}",
-#       }
+- debug:
+    msg : "{{ lookup('env', 'HOME') }}"
+- name: gnome | keybindings | nautilus home keybinding
+  vars:
+    user: "{{ ansible_facts['env']['SUDO_USER'] }}"
+  tags: gnome,keybindings
+  dconf:
+    key: '{{ item.key }}'
+    value: '{{ item.value}}'
+  with_items:
+    - {
+        key: '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/name',
+        value: "'Nautilus'",
+      }
+    - {
+        key: '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/binding',
+        value: "'<Super>f'",
+      }
+    - {
+        key: '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/command',
+        value: nautilus "{{ user }}",
+      }
 
 - name: gnome | keybindings | screenlock keybinding
   tags: gnome,keybindings
-  become_user: fabio
   dconf:
     key: '{{ item.key }}'
     value: '{{ item.value}}'
