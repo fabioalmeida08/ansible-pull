@@ -1,0 +1,4 @@
+[Desktop Entry]
+Type=Application
+Name=modmap
+Exec=$HOME/.Scripts/modmap.sh
