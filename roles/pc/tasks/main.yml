@@ -1,5 +1,6 @@
 - include_tasks: desktop_env/gnome/keybindings.yml
 - include_tasks: desktop_env/gnome/powersettings.yml
+- include_tasks: system_setup/tweaks.yml
 
 ## install software
 - import_tasks: software/bashtop.yml
@@ -17,4 +18,3 @@
 - import_tasks: software/grafana.yml
 - import_tasks: software/code.yml
 - import_tasks: software/net-tools.yml
-
