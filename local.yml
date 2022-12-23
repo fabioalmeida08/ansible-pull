@@ -13,6 +13,15 @@
   tags: pc
   become: true
   vars:
-    home: 'home/{{ ansible_env.SUDO_USER }}'
+    home: '/home/{{ ansible_env.SUDO_USER }}'
+    user: '{{ ansible_env.SUDO_USER }}'
+  vars_prompt:
+    - name: git_username
+      prompt: git config username
+      private: false
+
+    - name: git_email
+      prompt: git config email
+      private: false
   roles:
     - pc
