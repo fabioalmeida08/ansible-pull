@@ -1,0 +1,4 @@
+- name: software | termius | install package
+  tags: termius, packages, workstation-packages
+  snap:
+    name: termius-app
