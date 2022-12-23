@@ -1,0 +1,5 @@
+- name: software | gnome-shell-extension-pop-shell | install package
+  tags: gnome-shell-extension-pop-shell, packages, workstation-packages
+  package:
+    name: gnome-shell-extension-pop-shell
+    state: latest
