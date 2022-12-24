@@ -1,4 +1,10 @@
 #!/bin/bash
-pacman -S ansible 
+sudo pacman -S ansible 
 
-sudo ansible-pull -U https://github.com/fabioalmeida08/ansible-pull
+cd $HOME
+
+git clone https://github.com/fabioalmeida08/ansible-pull
+
+cd ansible-pull
+
+sudo ansible-playbook local.yml
