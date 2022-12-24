@@ -1,6 +1,7 @@
 - include_tasks: system_setup/main.yml
 - include_tasks: desktop_env/gnome/powersettings.yml
 - include_tasks: desktop_env/gnome/keybindings.yml
+- include_tasks: dotfiles/main.yml
 
 ## install software
 - import_tasks: software/bashtop.yml
