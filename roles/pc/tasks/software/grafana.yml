@@ -3,10 +3,5 @@
   package:
     name: grafana
     state: latest
+  notify: start grafana service
   
-- name: start grafana service
-  tags: grafana, service
-  service:
-    name: grafana
-    state: started
-    enabled: yes

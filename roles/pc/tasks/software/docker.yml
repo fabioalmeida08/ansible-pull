@@ -3,3 +3,7 @@
   package:
     name: docker
     state: latest
+  notify: "{{ item }}"
+    loop:
+      - ensure group docker exists
+      - add user to docker group

@@ -3,10 +3,5 @@
   package:
     name: prometheus
     state: latest
+  notify: start prometheus service
 
-- name: start prometheus service
-  tags: prometheus, service
-  service:
-    name: prometheus
-    state: started
-    enabled: yes
