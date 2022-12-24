@@ -2,8 +2,8 @@
   tags: gnome,power settings
   become_user: fabio
   dconf:
-    key: '{{ item.key }}'
-    value: '{{ item.value}}'
+    key: "{{ item.key }}"
+    value: "{{ item.value }}"
   with_items:
     - {
         key: "/org/gnome/settings-daemon/plugins/power/sleep-inactive-ac-type",

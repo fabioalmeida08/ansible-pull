@@ -63,7 +63,7 @@
   tags: gnome,keybindings
   dconf:
     key: "{{ item.key }}"
-    value: "{{ item.value}}"
+    value: "{{ item.value }}"
   with_items:
     - {
         key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/name",
@@ -82,7 +82,7 @@
   tags: gnome,keybindings
   dconf:
     key: "{{ item.key }}"
-    value: "{{ item.value}}"
+    value: "{{ item.value }}"
   with_items:
     - {
         key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/name",
@@ -101,7 +101,7 @@
   tags: gnome,keybindings
   dconf:
     key: "{{ item.key }}"
-    value: "{{ item.value}}"
+    value: "{{ item.value }}"
   with_items:
     - {
         key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/name",
@@ -122,7 +122,7 @@
   tags: gnome,keybindings
   dconf:
     key: "{{ item.key }}"
-    value: "{{ item.value}}"
+    value: "{{ item.value }}"
   with_items:
     - {
         key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/name",
@@ -134,14 +134,14 @@
       }
     - {
         key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/command",
-        value: "'nautilus/{{ home }}'",
+        value: "'nautilus -w {{ home }}'",
       }
 
 - name: gnome | keybindings | screenlock keybinding
   tags: gnome,keybindings
   dconf:
     key: "{{ item.key }}"
-    value: "{{ item.value}}"
+    value: "{{ item.value }}"
   with_items:
     - {
         key: "/org/gnome/settings-daemon/plugins/media-keys/screensaver/name",
