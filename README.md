@@ -5,5 +5,5 @@
 ansible playbook to set my personal desktop environment after a clean system install.
 
 ```
-curl -O https://raw.githubusercontent.com/fabioalmeida08/ansible-pull/main/roles/pc/scripts/bootstrap.sh && sudo bash bootstrap.sh
+curl -O https://raw.githubusercontent.com/fabioalmeida08/ansible-pull/main/roles/pc/scripts/bootstrap.sh && bash bootstrap.sh
 ```
