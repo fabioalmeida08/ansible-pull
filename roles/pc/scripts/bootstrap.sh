@@ -3,7 +3,7 @@ sudo pacman -S ansible
 
 cd $HOME
 
-git clone https://github.com/fabioalmeida08/ansible-pull
+git clone https://github.com/fabioalmeida08/playbook
 
 cd ansible-pull
 
