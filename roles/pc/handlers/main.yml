@@ -14,3 +14,37 @@
   with_items:
     - { regexp: "^name", line: "name = {{ git_username }}" }
     - { regexp: "^email", line: "email = {{ git_email }}" }
+
+- name: ensure group docker exists
+  tags: docker, group
+  group:
+    name: docker
+    state: present
+
+- name: add user to docker group
+  tags: docker, group, add user
+  user:
+    name: "{{ user }}"
+    groups: docker
+    append: yes
+
+- name: start prometheus service
+  tags: prometheus, service
+  service:
+    name: prometheus
+    state: started
+    enabled: yes
+
+- name: start prometheus-node-exporter service
+  tags: prometheus-node-exporter, service
+  service:
+    name: prometheus-node-exporter
+    state: started
+    enabled: yes
+
+- name: start grafana service
+  tags: grafana, service
+  service:
+    name: grafana
+    state: started
+    enabled: yes
