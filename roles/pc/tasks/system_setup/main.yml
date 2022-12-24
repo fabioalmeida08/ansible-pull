@@ -28,3 +28,9 @@
   lineinfile:
     path: "/etc/fstab"
     line: "UUID=fbad14bc-c916-442c-9c62-17073c551e07 /mnt/hdd2	ext4	defaults 0 0"
+
+- name: Reject everything and enable UFW
+  tags: Firewall, UFW, Reject
+  community.general.ufw:
+    state: enabled
+    policy: reject
