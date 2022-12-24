@@ -15,3 +15,16 @@
       }
     - { regexp: "^#EnableAUR", line: EnableAUR }
     - { regexp: "^#CheckAURUpdates", line: CheckAURUpdates }
+
+- name: Create a dir to mount Secundaty HDD
+  tags: HDD, dir
+  file:
+    path: "/mnt/hdd2"
+    state: directory
+    mode: "0777"
+
+- name: Mount my secundary HDD on boot
+  tags: mount, HDD
+  lineinfile:
+    path: "/etc/fstab"
+    line: "UUID=fbad14bc-c916-442c-9c62-17073c551e07 /mnt/hdd2	ext4	defaults 0 0"
