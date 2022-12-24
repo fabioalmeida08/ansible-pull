@@ -1,157 +1,157 @@
-- name: gnome | keybindings | set custom-keybindings
-  tags: gnome,keybindings
-  dconf:
-    key: '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings'
-    value: "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom6/']"
-
 - name: gnome | keybindings | disable default browser key binding
   tags: gnome,keybindings
   dconf:
-    key: '{{ item.key }}'
-    value: '{{ item.value }}'
+    key: "{{ item.key }}"
+    value: "{{ item.value }}"
   with_items:
     - {
-        key: '/org/gnome/settings-daemon/plugins/media-keys/www',
-        value: '@as []',
+        key: "/org/gnome/settings-daemon/plugins/media-keys/www",
+        value: "@as []",
       }
 
 - name: gnome | keybindings | disable default file manager binding
   tags: gnome,keybindings
   dconf:
-    key: '{{ item.key }}'
-    value: '{{ item.value }}'
+    key: "{{ item.key }}"
+    value: "{{ item.value }}"
   with_items:
     - {
-        key: '/org/gnome/settings-daemon/plugins/media-keys/home',
-        value: '@as []',
+        key: "/org/gnome/settings-daemon/plugins/media-keys/home",
+        value: "@as []",
       }
 
 - name: gnome | keybindings | disable default email client binding
   tags: gnome,keybindings
   dconf:
-    key: '{{ item.key }}'
-    value: '{{ item.value }}'
+    key: "{{ item.key }}"
+    value: "{{ item.value }}"
   with_items:
     - {
-        key: '/org/gnome/settings-daemon/plugins/media-keys/email',
-        value: '@as []',
+        key: "/org/gnome/settings-daemon/plugins/media-keys/email",
+        value: "@as []",
       }
 
 - name: gnome | keybindings | disable default terminal key binding
   tags: gnome,keybindings
   dconf:
-    key: '{{ item.key }}'
-    value: '{{ item.value }}'
+    key: "{{ item.key }}"
+    value: "{{ item.value }}"
   with_items:
     - {
-        key: '/org/gnome/settings-daemon/plugins/media-keys/terminal',
-        value: '@as []',
+        key: "/org/gnome/settings-daemon/plugins/media-keys/terminal",
+        value: "@as []",
       }
 
 - name: gnome | keybindings | disable default screenlock key binding
   tags: gnome,keybindings
   dconf:
-    key: '{{ item.key }}'
-    value: '{{ item.value }}'
+    key: "{{ item.key }}"
+    value: "{{ item.value }}"
   with_items:
     - {
-        key: '/org/gnome/settings-daemon/plugins/media-keys/screensaver',
-        value: '@as []',
+        key: "/org/gnome/settings-daemon/plugins/media-keys/screensaver",
+        value: "@as []",
       }
+
+- name: gnome | keybindings | set custom-keybindings
+  tags: gnome,keybindings
+  dconf:
+    key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings"
+    value: "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom6/']"
 
 - name: gnome | keybindings | set terminal keybinding
   tags: gnome,keybindings
   dconf:
-    key: '{{ item.key }}'
-    value: '{{ item.value}}'
+    key: "{{ item.key }}"
+    value: "{{ item.value}}"
   with_items:
     - {
-        key: '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/name',
+        key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/name",
         value: "'Terminal'",
       }
     - {
-        key: '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/binding',
+        key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/binding",
         value: "'<Alt>Return'",
       }
     - {
-        key: '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/command',
+        key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/command",
         value: "'kitty'",
       }
 
 - name: gnome | keybindings | set screenshot keybinding
   tags: gnome,keybindings
   dconf:
-    key: '{{ item.key }}'
-    value: '{{ item.value}}'
+    key: "{{ item.key }}"
+    value: "{{ item.value}}"
   with_items:
     - {
-        key: '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/name',
+        key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/name",
         value: "'Print'",
       }
     - {
-        key: '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/binding',
+        key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/binding",
         value: "'Print'",
       }
     - {
-        key: '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/command',
+        key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/command",
         value: "'flameshot gui'",
       }
 
 - name: gnome | keybindings | pavu control keybinding
   tags: gnome,keybindings
   dconf:
-    key: '{{ item.key }}'
-    value: '{{ item.value}}'
+    key: "{{ item.key }}"
+    value: "{{ item.value}}"
   with_items:
     - {
-        key: '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/name',
+        key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/name",
         value: "'Pavu-control'",
       }
     - {
-        key: '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/binding',
+        key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/binding",
         value: "'<Super>v'",
       }
     - {
-        key: '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/command',
+        key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/command",
         value: "'pavucontrol'",
       }
 
 - name: gnome | keybindings | nautilus home keybinding
   vars:
-    user: '{{ ansible_env.SUDO_USER }}'
+    user: "{{ ansible_env.SUDO_USER }}"
   tags: gnome,keybindings
   dconf:
-    key: '{{ item.key }}'
-    value: '{{ item.value}}'
+    key: "{{ item.key }}"
+    value: "{{ item.value}}"
   with_items:
     - {
-        key: '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/name',
+        key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/name",
         value: "'Nautilus'",
       }
     - {
-        key: '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/binding',
+        key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/binding",
         value: "'<Super>f'",
       }
     - {
-        key: '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/command',
+        key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/command",
         value: "'nautilus/{{ home }}'",
       }
 
 - name: gnome | keybindings | screenlock keybinding
   tags: gnome,keybindings
   dconf:
-    key: '{{ item.key }}'
-    value: '{{ item.value}}'
+    key: "{{ item.key }}"
+    value: "{{ item.value}}"
   with_items:
     - {
-        key: '/org/gnome/settings-daemon/plugins/media-keys/screensaver/name',
+        key: "/org/gnome/settings-daemon/plugins/media-keys/screensaver/name",
         value: "'Screenlock'",
       }
     - {
-        key: '/org/gnome/settings-daemon/plugins/media-keys/screensaver/binding',
+        key: "/org/gnome/settings-daemon/plugins/media-keys/screensaver/binding",
         value: "'<Super>x'",
       }
     - {
-        key: '/org/gnome/settings-daemon/plugins/media-keys/screensaver/command',
+        key: "/org/gnome/settings-daemon/plugins/media-keys/screensaver/command",
         value: "'xdg-screensaver lock'",
       }
