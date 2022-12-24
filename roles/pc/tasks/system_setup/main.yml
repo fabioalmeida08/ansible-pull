@@ -30,7 +30,7 @@
     line: "UUID=fbad14bc-c916-442c-9c62-17073c551e07 /mnt/hdd2	ext4	defaults 0 0"
 
 - name: Reject everything and enable UFW
-  tags: Firewall, UFW, Reject
+  tags: firewall, UFW, reject
   community.general.ufw:
     state: enabled
     policy: reject
