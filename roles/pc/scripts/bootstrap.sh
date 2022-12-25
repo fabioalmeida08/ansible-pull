@@ -5,6 +5,4 @@ cd $HOME
 
 git clone https://github.com/fabioalmeida08/playbook
 
-cd playbook
-
-sudo ansible-playbook local.yml
+sudo ansible-playbook $HOME/playbook/local.yml
