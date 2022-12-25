@@ -50,12 +50,14 @@
     enabled: yes
 
 - name: install powerlevel10k theme
+  tags: powerlevel10k, theme, zsh
   git:
     repo: https://github.com/romkatv/powerlevel10k.git
     dest: "{{ home }}/.oh-my-zsh/custom/themes/powerlevel10k"
   notify: set powerlevel10k for zsh theme
 
 - name: set powerlevel10k for zsh theme
+  tags: powerlevel10k, theme, zsh
   lineinfile:
     path: "{{ home }}/.zshrc"
     regexp: "^ZSH_THEME="
