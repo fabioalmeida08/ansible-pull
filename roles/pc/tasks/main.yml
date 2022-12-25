@@ -24,3 +24,4 @@
 - import_tasks: software/net-tools.yml
 - import_tasks: software/termius.yml
 - import_tasks: software/gnome-pop-shell.yml
+- import_tasks: software/oh-my-zsh.yml
