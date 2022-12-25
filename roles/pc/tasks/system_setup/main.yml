@@ -34,15 +34,3 @@
   community.general.ufw:
     state: enabled
     policy: reject
-
-- name: Font Meslo Nerd Font P10k
-  tags: fonts, meslo
-  package:
-    name: ttf-meslo-nerd-font-powerlevel10k
-    state: latest
-
-- name: Font Fire code Nerd Font
-  tags: fonts, fira code
-  package:
-    name: ttf-firacode-nerd
-    state: latest
