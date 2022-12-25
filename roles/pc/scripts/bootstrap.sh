@@ -5,6 +5,6 @@ cd $HOME
 
 git clone https://github.com/fabioalmeida08/playbook
 
-cd ansible-pull
+cd playbook
 
 sudo ansible-playbook local.yml
