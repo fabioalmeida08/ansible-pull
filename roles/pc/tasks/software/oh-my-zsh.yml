@@ -1,0 +1,4 @@
+- name: software | oh-my-zsh | install package
+  become_user: "{{ user }}"
+  shell: sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+  notify: install powerlevel10k theme
