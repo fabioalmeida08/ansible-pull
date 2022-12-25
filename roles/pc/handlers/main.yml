@@ -48,3 +48,15 @@
     name: grafana
     state: started
     enabled: yes
+
+- name: install powerlevel10k theme
+  git:
+    repo: https://github.com/romkatv/powerlevel10k.git
+    dest: "{{ home }}/.oh-my-zsh/custom/themes/powerlevel10k"
+  notify: set powerlevel10k for zsh theme
+
+- name: set powerlevel10k for zsh theme
+  lineinfile:
+    path: "{{ home }}/.zshrc"
+    regexp: "^ZSH_THEME="
+    line: ZSH_THEME="powerlevel10k/powerlevel10k"
