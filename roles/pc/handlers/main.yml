@@ -62,3 +62,16 @@
     path: "{{ home }}/.zshrc"
     regexp: "^ZSH_THEME="
     line: ZSH_THEME="powerlevel10k/powerlevel10k"
+
+- name: remove original prometheus file
+  file:
+    path: "/etc/prometheus"
+    state: absent
+
+- name: set new personal prometheus file
+  copy:
+    src: "{{ home }}/.dotfiles/prometheus.yml"
+    dest: "/etc/prometheus/"
+    owner: "{{ user }}"
+    group: "{{ user }}"
+    mode: "0755"

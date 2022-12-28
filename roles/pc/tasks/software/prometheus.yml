@@ -3,5 +3,7 @@
   package:
     name: prometheus
     state: latest
-  notify: start prometheus service
-
+  notify: "{{ item }}"
+  loop:
+    - remove original prometheus file
+    - set new personal prometheus file
