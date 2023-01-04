@@ -1,0 +1,5 @@
+- name: software | vagrant | install package
+  tags: vagrant, packages, workstation-packages
+  package:
+    name: vagrant
+    state: latest
