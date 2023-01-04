@@ -9,12 +9,24 @@
         name: python-psutil
         state: latest
 
+    - name: pre-run | update package cache (arch , manjaro)
+      tags: always
+      pacman: update_cache=yes
+      changed_when: False
+      when: ansible_distribution in ["Arch, "Manjaro"]
+
+    - name: pre-run | update package cache (debian, etc)
+      tags: always
+      apt: update_cache=yes
+      changed_when: False
+      when: ansible_distribution in ["Debian", "Ubuntu"]
+
 - hosts: localhost
   tags: pc
   become: true
   vars:
-    home: '/home/{{ ansible_env.SUDO_USER }}'
-    user: '{{ ansible_env.SUDO_USER }}'
+    home: "/home/{{ ansible_env.SUDO_USER }}"
+    user: "{{ ansible_env.SUDO_USER }}"
   vars_prompt:
     - name: git_username
       prompt: git config username
