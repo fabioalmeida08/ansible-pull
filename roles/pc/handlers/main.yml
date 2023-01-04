@@ -1,11 +1,11 @@
-- name: config_autostart_desktopfile
+- name: config autostart desktopfile
   tags: desktop file, config, script, autostart
   lineinfile:
     path: "{{ home }}/.config/autostart/modmap.desktop"
     regexp: "^Exec"
     line: "Exec={{ home }}/.scripts/modmap.sh"
 
-- name: config_git_config
+- name: setup git config
   tags: gitconfig, config,
   lineinfile:
     path: "{{ home }}/.gitconfig"
@@ -54,7 +54,10 @@
   git:
     repo: https://github.com/romkatv/powerlevel10k.git
     dest: "{{ home }}/.oh-my-zsh/custom/themes/powerlevel10k"
-  notify: set powerlevel10k for zsh theme
+  notify: "{{ item }}"
+  loop:
+    - set powerlevel10k for zsh theme
+    - set aliases
 
 - name: set powerlevel10k for zsh theme
   tags: powerlevel10k, theme, zsh
@@ -63,15 +66,20 @@
     regexp: "^ZSH_THEME="
     line: ZSH_THEME="powerlevel10k/powerlevel10k"
 
-- name: remove original prometheus file
-  file:
-    path: "/etc/prometheus"
-    state: absent
+- name: set aliases
+  tags: aliases, zsh
+  lineinfile:
+    path: "{{ home }}.zshrc"
+    line: |
+      # aliases
+      alias ssh="kitty +kitten ssh" 
+      alias tda="todo.sh add"
+      alias td="todo.sh"
+      alias tdl="todo.sh ls"
+      alias vg="vagrant"
+      alias vgu="vagrant up"
+      alias vgp="vagrant provision"
+      alias vgh="vagrant halt"
+      alias vgd="vagrant destroy -f"
+      alias ap="ansible-playbook"
 
-- name: set new personal prometheus file
-  copy:
-    src: "{{ home }}/.dotfiles/prometheus.yml"
-    dest: "/etc/prometheus/"
-    owner: "{{ user }}"
-    group: "{{ user }}"
-    mode: "0755"
