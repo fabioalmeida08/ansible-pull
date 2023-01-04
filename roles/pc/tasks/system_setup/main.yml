@@ -24,8 +24,10 @@
   tags: HDD, dir
   file:
     path: "/mnt/hdd2"
+    owner: "{{ user }}"
+    group: "{{ user }}"
     state: directory
-    mode: "0777"
+    mode: "0764"
 
 - name: Mount my secundary HDD on boot
   tags: mount, HDD
