@@ -16,7 +16,8 @@
     - { file_name: ".gitconfig", dest: "{{ home }}" }
     - { file_name: ".scripts", dest: "{{ home }}" }
     - { file_name: "kitty", dest: "{{ home }}/.config/" }
-  notify: config_git_config
+    - { file_name: ".p10k.zsh", dest: "{{ home }}"}
+  notify: setup git config
 
 - name: Setup desktop file on autostart dir
   tags: desktop file, config, script, autostart
@@ -26,4 +27,4 @@
     owner: "{{ user }}"
     group: "{{ user }}"
     mode: 0777
-  notify: config_autostart_desktopfile
+  notify: config autostart desktopfile
