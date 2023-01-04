@@ -1,0 +1,5 @@
+- name: software | virtualbox | install package
+  tags: virtualbox, packages, workstation-packages
+  package:
+    name: virtualbox
+    state: latest
