@@ -26,3 +26,6 @@
 - import_tasks: software/gnome-pop-shell.yml
 - import_tasks: software/fonts.yml
 - import_tasks: software/oh-my-zsh.yml
+- import_tasks: software/virtualbox.yml
+- import_tasks: software/vagrant.yml
+- import_tasks: bat.yml
