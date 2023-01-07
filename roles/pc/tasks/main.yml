@@ -28,4 +28,4 @@
 - import_tasks: software/oh-my-zsh.yml
 - import_tasks: software/virtualbox.yml
 - import_tasks: software/vagrant.yml
-- import_tasks: bat.yml
+- import_tasks: software/bat.yml
