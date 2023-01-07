@@ -1,0 +1,5 @@
+- name: software | netdata | install package
+  tags: netdata, packages, workstation-packages
+  package:
+    name: netdata
+    state: latest
