@@ -29,3 +29,4 @@
 - import_tasks: software/virtualbox.yml
 - import_tasks: software/vagrant.yml
 - import_tasks: software/bat.yml
+- import_tasks: software/netdata.yml
