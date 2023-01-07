@@ -30,3 +30,9 @@
 - import_tasks: software/vagrant.yml
 - import_tasks: software/bat.yml
 - import_tasks: software/netdata.yml
+
+## containers
+
+- import_tasks: containers/glances.yml
+- import_tasks: containers/portainer_agent.yml
+- import_tasks: containers/watchtower.yml
