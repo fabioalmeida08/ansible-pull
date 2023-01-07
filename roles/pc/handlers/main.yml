@@ -57,6 +57,7 @@
   notify: "{{ item }}"
   loop:
     - set powerlevel10k for zsh theme
+    - source custom p10k config
     - set aliases
 
 - name: set powerlevel10k for zsh theme
@@ -65,6 +66,12 @@
     path: "{{ home }}/.zshrc"
     regexp: "^ZSH_THEME="
     line: ZSH_THEME="powerlevel10k/powerlevel10k"
+
+- name: source custom p10k config
+  tags: powerlevel10k, theme, zsh
+  lineinfile:
+    path: "{{ home }}/.zshrc"
+    line: source ~/.p10k.zsh
 
 - name: set aliases
   tags: aliases, zsh
@@ -82,4 +89,3 @@
       alias vgh="vagrant halt"
       alias vgd="vagrant destroy -f"
       alias ap="ansible-playbook"
-
