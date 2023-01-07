@@ -69,7 +69,7 @@
 - name: set aliases
   tags: aliases, zsh
   lineinfile:
-    path: "{{ home }}.zshrc"
+    path: "{{ home }}/.zshrc"
     line: |
       # aliases
       alias ssh="kitty +kitten ssh" 
