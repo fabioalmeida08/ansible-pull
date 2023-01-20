@@ -8,3 +8,6 @@
     - start docker service
     - ensure group docker exists
     - add user to docker group
+
+- name: Flush handlers
+  meta: flush_handlers
