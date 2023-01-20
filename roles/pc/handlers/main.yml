@@ -35,6 +35,13 @@
     state: started
     enabled: yes
 
+- name: start docker service
+  tags: docker, service
+  service:
+    name: docker
+    state: started
+    enabled: yes
+
 - name: start prometheus-node-exporter service
   tags: prometheus-node-exporter, service
   service:
