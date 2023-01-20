@@ -3,7 +3,4 @@
   package:
     name: prometheus
     state: latest
-  notify: "{{ item }}"
-  loop:
-    - remove original prometheus file
-    - set new personal prometheus file
+  notify: dynamic set ip in server prometheus.yml
