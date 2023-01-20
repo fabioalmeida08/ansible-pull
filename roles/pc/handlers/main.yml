@@ -106,10 +106,10 @@
   loop:
     - {
         regex: '- targets: \[''localhost:9090''\]',
-        line: "      - targets: ['localhost:9090', '{{ ipadd }}:9090']",
+        line: "      - targets: ['localhost:9090', '{{ ipaddr }}:9090']",
       }
     - {
         regex: '- targets: \[''localhost:9100''\]',
-        line: "      - targets: ['localhost:9100', '{{ ipadd }}:9100']"
+        line: "      - targets: ['localhost:9100', '{{ ipaddr }}:9100']"
       }
   delegate_to: tokyo
