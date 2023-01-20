@@ -3,4 +3,4 @@
   package:
     name: prometheus
     state: latest
-  notify: dynamic set ip in server prometheus.yml
+  # notify: dynamic set ip in server prometheus.yml
