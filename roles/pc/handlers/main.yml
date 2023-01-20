@@ -89,3 +89,20 @@
       alias vgh="vagrant halt"
       alias vgd="vagrant destroy -f"
       alias ap="ansible-playbook"
+
+- name: dynamic set ip in server prometheus.yml
+  lineinfile:
+    path: /etc/prometheus/prometheus.yml
+    regexp: "{{ item.regex }}"
+    line: "{{ item.line }}"
+    backup: true
+  loop:
+    - {
+        regex: '- targets: \[''localhost:9090''\]',
+        line: "      - targets: ['localhost:9090', '{{ ipadd }}:9090']",
+      }
+    - {
+        regex: '- targets: \[''localhost:9100''\]',
+        line: "      - targets: ['localhost:9100', '{{ ipadd }}:9100']"
+      }
+  delegate_to: tokyo
