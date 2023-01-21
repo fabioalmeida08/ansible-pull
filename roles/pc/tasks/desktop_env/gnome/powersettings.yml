@@ -1,6 +1,6 @@
 - name: gnome | power settings | sleep inactive
   tags: gnome,power settings
-  become_user: fabio
+  become_user: "{{ user }}"
   dconf:
     key: "{{ item.key }}"
     value: "{{ item.value }}"
