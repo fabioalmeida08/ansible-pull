@@ -20,4 +20,4 @@
     remote_src: yes
     owner: "{{ user }}"
     group: "{{ user }}"
-    mode: "0764"
+    mode: "0755"
