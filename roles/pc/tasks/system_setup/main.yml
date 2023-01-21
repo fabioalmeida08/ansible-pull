@@ -1,42 +1,4 @@
-- name: Create a symbolic link for snap
-  file:
-    src: "/var/lib/snapd/snap"
-    dest: "/snap"
-    owner: "{{ user }}"
-    group: "{{ user }}"
-    state: link
-
-- name: Config default pamac settings
-  tags: system, pamac
-  lineinfile:
-    path: "/etc/pamac.conf"
-    regexp: "{{ item.regexp }}"
-    line: "{{ item.line }}"
-  with_items:
-    - {
-        regexp: "^MaxParallelDownloads",
-        line: MaxParallelDownloads = 10,
-      }
-    - { regexp: "^#EnableAUR", line: EnableAUR }
-    - { regexp: "^#CheckAURUpdates", line: CheckAURUpdates }
-
-- name: Create a dir to mount Secundaty HDD
-  tags: HDD, dir
-  file:
-    path: "/mnt/hdd2"
-    owner: "{{ user }}"
-    group: "{{ user }}"
-    state: directory
-    mode: "0764"
-
-- name: Mount my secundary HDD on boot
-  tags: mount, HDD
-  lineinfile:
-    path: "/etc/fstab"
-    line: "UUID=fbad14bc-c916-442c-9c62-17073c551e07 /mnt/hdd2	ext4	defaults 0 0"
-
-- name: Reject everything and enable UFW
-  tags: firewall, UFW, reject
-  community.general.ufw:
-    state: enabled
-    policy: reject
+- import_tasks: pacman.yml
+- import_tasks: snap.yml
+- import_tasks: mount.yml
+- import_tasks: ufw.yml
