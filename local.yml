@@ -12,7 +12,7 @@
         - python-psutil
         - python-pip
       
-     - name: Install github module
+    - name: Install github module
       ansible.builtin.pip:
         name: github3.py
 
