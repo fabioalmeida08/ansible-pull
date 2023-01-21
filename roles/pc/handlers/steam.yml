@@ -1,8 +1,11 @@
 - name: create the dir for eg-proton
-  ansible.builtin.file:
-  path: "{{ home }}/.steam/root/compatibilitytools.d"
+  file:
+    path: "{{ home }}/.steam/root/compatibilitytools.d"
+    owner: "{{ user }}"
+    group: "{{ user }}"
     state: directory
-    mode: '0755'
+    mode: '0764'
+
 
 - name: get proton-ge latest tag
   github_release:
@@ -14,5 +17,5 @@
 - name: install proton ge
   ansible.builtin.unarchive:
     src: "https://github.com/GloriousEggroll/proton-ge-custom/releases/download/{{ proton_ge_latest['tag'] }}/{{ proton_ge_latest['tag']}}.tar.gz"
-    dest: "{{ home }}/.steam/root/compatibilitytools.d"
+    dest: "{{ home }}"/.steam/root/compatibilitytools.d
     remote_src: yes
