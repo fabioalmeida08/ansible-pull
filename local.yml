@@ -8,6 +8,10 @@
       package:
         name: python-psutil
         state: latest
+    
+    - name: Install github module
+      ansible.builtin.pip:
+        name: github3.py
 
     - name: pre-run | update package cache (debian, etc)
       tags: always
