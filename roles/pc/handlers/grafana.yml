@@ -1,0 +1,6 @@
+- name: start grafana service
+  tags: grafana, service
+  service:
+    name: grafana
+    state: started
+    enabled: yes
