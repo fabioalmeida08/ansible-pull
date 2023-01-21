@@ -1,4 +1,5 @@
 - name: gnome | keybindings | disable default key bindings
+  become_user: "{{ user }}"
   tags: gnome,keybindings
   dconf:
     key: "{{ item.key }}"
@@ -24,8 +25,14 @@
         key: "/org/gnome/settings-daemon/plugins/media-keys/screensaver",
         value: "@as []",
       }
-
-
+    - {
+       key: "/org/gnome/shell/keybindings/show-screenshot-ui",
+       value: "@as []"
+      }
+    - {
+       key: "/org/gnome/shell/keybindings/toggle-message-tray",
+       value: "@as []"
+      }
 
 - name: gnome | keybindings | set custom-keybindings
   become_user: "{{ user }}"
