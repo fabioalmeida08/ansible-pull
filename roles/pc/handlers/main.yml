@@ -113,3 +113,5 @@
         line: "      - targets: ['localhost:9100', '{{ ipaddr }}:9100']"
       }
   delegate_to: tokyo
+
+- import_tasks: steam.yml
