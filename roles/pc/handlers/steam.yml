@@ -1,0 +1,18 @@
+- name: Create a directory if it does not exist
+  ansible.builtin.file:
+  path: "{{ home }}/.steam/root/compatibilitytools.d"
+    state: directory
+    mode: '0755'
+
+- name: Get proton-ge latest tag
+  github_release:
+    user: GloriousEggroll
+    repo: proton-ge-custom
+    action: latest_release
+  register: proton_ge_latest
+
+- name: install proton ge
+  ansible.builtin.unarchive:
+    src: "https://github.com/GloriousEggroll/proton-ge-custom/releases/download/{{ proton_ge_latest['tag'] }}/{{ proton_ge_latest['tag']}}.tar.gz"
+    dest: "{{ home }}/.steam/root/compatibilitytools.d"
+    remote_src: yes
