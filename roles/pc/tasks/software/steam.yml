@@ -6,5 +6,5 @@
   notify: {{ item }}
   loop:
     - create the dir for eg-proton
-    - ge proton-ge latest tag
+    - get proton-ge latest tag
     - install proton ge
