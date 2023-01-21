@@ -1,0 +1,13 @@
+- name: Config default pamac settings
+  tags: system, pamac
+  lineinfile:
+    path: "/etc/pamac.conf"
+    regexp: "{{ item.regexp }}"
+    line: "{{ item.line }}"
+  with_items:
+    - {
+        regexp: "^MaxParallelDownloads",
+        line: MaxParallelDownloads = 10,
+      }
+    - { regexp: "^#EnableAUR", line: EnableAUR }
+    - { regexp: "^#CheckAURUpdates", line: CheckAURUpdates }
