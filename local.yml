@@ -6,10 +6,13 @@
     - name: pre-run | check requirements
       tags: always
       package:
-        name: python-psutil
+        name: "{{ item }}"
         state: latest
-    
-    - name: Install github module
+      loop:
+        - python-psutil
+        - python-pip
+      
+     - name: Install github module
       ansible.builtin.pip:
         name: github3.py
 
