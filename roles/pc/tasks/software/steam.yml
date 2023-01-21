@@ -3,3 +3,8 @@
   package:
     name: steam
     state: latest
+  notify: {{ item }}
+  loop:
+    - create the dir for eg-proton
+    - ge proton-ge latest tag
+    - install proton ge
