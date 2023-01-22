@@ -123,6 +123,28 @@
         value: "'nautilus -w {{ home }}'",
       }
 
+- name: gnome | keybindings | toggle window title
+  become_user: "{{ user }}"
+  vars:
+    user: "{{ ansible_env.SUDO_USER }}"
+  tags: gnome,keybindings
+  dconf:
+    key: "{{ item.key }}"
+    value: "{{ item.value }}"
+  with_items:
+    - {
+        key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/name",
+        value: "'Toggle Window Title'",
+      }
+    - {
+        key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/binding",
+        value: "'<Super>t'",
+      }
+    - {
+        key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/command",
+        value: "'bash {{ home }}/.scripts/toggle-window-title.sh'",
+      }
+      
 - name: gnome | keybindings | screenlock keybinding
   become_user: "{{ user }}"
   tags: gnome,keybindings
