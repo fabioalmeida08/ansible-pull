@@ -26,12 +26,12 @@
         value: "@as []",
       }
     - {
-       key: "/org/gnome/shell/keybindings/show-screenshot-ui",
-       value: "@as []"
+        key: "/org/gnome/shell/keybindings/show-screenshot-ui",
+        value: "@as []",
       }
     - {
-       key: "/org/gnome/shell/keybindings/toggle-message-tray",
-       value: "@as []"
+        key: "/org/gnome/shell/keybindings/toggle-message-tray",
+        value: "@as []",
       }
 
 - name: gnome | keybindings | set custom-keybindings
@@ -127,18 +127,5 @@
   become_user: "{{ user }}"
   tags: gnome,keybindings
   dconf:
-    key: "{{ item.key }}"
-    value: "{{ item.value }}"
-  with_items:
-    - {
-        key: "/org/gnome/settings-daemon/plugins/media-keys/screensaver/name",
-        value: "'Screenlock'",
-      }
-    - {
-        key: "/org/gnome/settings-daemon/plugins/media-keys/screensaver/binding",
-        value: "'<Super>x'",
-      }
-    - {
-        key: "/org/gnome/settings-daemon/plugins/media-keys/screensaver/command",
-        value: "'xdg-screensaver lock'",
-      }
+    key: "/org/gnome/settings-daemon/plugins/media-keys/screensaver"
+    value: "@as ['<Super>x']"
