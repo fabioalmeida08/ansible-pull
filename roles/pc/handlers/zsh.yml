@@ -38,3 +38,9 @@
       alias vgh="vagrant halt"
       alias vgd="vagrant destroy -f"
       alias ap="ansible-playbook"
+      alias kl="kubectl"
+      alias klcf="kubectl create -f"
+      alias klap="kubectl apply -f"
+      alias klgp="kubectl get pods"
+      alias klsc='f(){ kubectl config set-context $(kubectl config current-context) --namespace="$1";  unset -f f; }; f'
+      alias klcn="kubectl create ns"
