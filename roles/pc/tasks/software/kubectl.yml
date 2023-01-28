@@ -1,0 +1,5 @@
+- name: software | kubectl  | install package
+  tags: kubectl , packages, workstation-packages
+  package:
+    name: kubectl 
+    state: latest
