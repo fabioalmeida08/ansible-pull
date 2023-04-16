@@ -31,6 +31,9 @@
 - import_tasks: software/insomnia.yml
 - import_tasks: software/themes.yml
 - import_tasks: software/code.yml
+#- import_tasks: software/dnsmasq.yml
+
+
 # - import_tasks: software/prometheus.yml
 # - import_tasks: software/prometheus-node-exporter.yml
 # - import_tasks: software/grafana.yml
