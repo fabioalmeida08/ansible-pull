@@ -1,6 +1,6 @@
 - name: create the dir for eg-proton
   file:
-    path: "{{ home }}/.steam/root/compatibilitytools.d"
+    path: "{{ home }}/.local/share/Steam/compatibilitytools.d"
     owner: "{{ user }}"
     group: "{{ user }}"
     state: directory
