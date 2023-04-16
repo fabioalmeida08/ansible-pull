@@ -8,7 +8,6 @@
     - set powerlevel10k for zsh theme
     - source custom p10k config
     - set aliases
-    - set login shell to zsh
 
 - name: set powerlevel10k for zsh theme
   tags: powerlevel10k, theme, zsh
