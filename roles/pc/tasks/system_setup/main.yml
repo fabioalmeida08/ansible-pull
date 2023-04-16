@@ -1,3 +1,2 @@
 - import_tasks: pacman.yml
-- import_tasks: snap.yml
 - import_tasks: ufw.yml
