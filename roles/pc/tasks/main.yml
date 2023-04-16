@@ -22,7 +22,6 @@
 - import_tasks: software/netdata.yml
 - import_tasks: software/taskwarrior.yml
 - import_tasks: software/lsd.yml
-#- import_tasks: software/code.yml
 - import_tasks: software/net-tools.yml
 - import_tasks: software/gnome-pop-shell.yml
 - import_tasks: software/fonts.yml
@@ -31,6 +30,7 @@
 - import_tasks: software/brave.yml
 - import_tasks: software/insomnia.yml
 - import_tasks: software/themes.yml
+- import_tasks: software/code.yml
 # - import_tasks: software/prometheus.yml
 # - import_tasks: software/prometheus-node-exporter.yml
 # - import_tasks: software/grafana.yml
