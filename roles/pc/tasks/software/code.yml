@@ -1,5 +1,5 @@
-- name: software | code | install package
-  tags: code, packages, workstation-packages
-  snap:
-    name: code
-    classic: true
+- name: software | vscode | install package
+  become_user: "{{ user }}"
+  tags: vscode, packages, workstation-packages
+  shell:
+    cmd: yay -S visual-studio-code-bin --noconfirm
