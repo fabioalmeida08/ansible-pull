@@ -23,12 +23,12 @@
 # - import_tasks: software/grafana.yml
 - import_tasks: software/code.yml
 - import_tasks: software/net-tools.yml
-- import_tasks: software/termius.yml
+# - import_tasks: software/termius.yml
 - import_tasks: software/gnome-pop-shell.yml
 - import_tasks: software/fonts.yml
 - import_tasks: software/oh-my-zsh.yml
-- import_tasks: software/virtualbox.yml
-- import_tasks: software/vagrant.yml
+# - import_tasks: software/virtualbox.yml
+# - import_tasks: software/vagrant.yml
 - import_tasks: software/bat.yml
 - import_tasks: software/netdata.yml
 - import_tasks: software/taskwarrior.yml
