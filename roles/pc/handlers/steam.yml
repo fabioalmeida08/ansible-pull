@@ -27,3 +27,9 @@
   tags: mango hud, packages, workstation-packages
   shell:
     cmd: yay -S mangohud lib32-mangohud --noconfirm
+
+- name: install protonup
+  become_user: "{{ user }}"
+  tags: mango hud, packages, workstation-packages
+  shell:
+    cmd: yay -S protonup-qt-bin --noconfirm
