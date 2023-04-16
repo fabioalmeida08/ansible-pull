@@ -18,9 +18,9 @@
 - import_tasks: software/qbittorrent.yml
 - import_tasks: software/steam.yml
 - import_tasks: software/vim.yml
-- import_tasks: software/prometheus.yml
-- import_tasks: software/prometheus-node-exporter.yml
-- import_tasks: software/grafana.yml
+# - import_tasks: software/prometheus.yml
+# - import_tasks: software/prometheus-node-exporter.yml
+# - import_tasks: software/grafana.yml
 - import_tasks: software/code.yml
 - import_tasks: software/net-tools.yml
 - import_tasks: software/termius.yml
@@ -31,9 +31,11 @@
 - import_tasks: software/vagrant.yml
 - import_tasks: software/bat.yml
 - import_tasks: software/netdata.yml
+- import_tasks: software/taskwarrior.yml
+- import_tasks: software/lsd.yml
 
 ## containers
 
-- import_tasks: containers/glances.yml
-- import_tasks: containers/portainer_agent.yml
-- import_tasks: containers/watchtower.yml
+# - import_tasks: containers/glances.yml
+# - import_tasks: containers/portainer_agent.yml
+# - import_tasks: containers/watchtower.yml
