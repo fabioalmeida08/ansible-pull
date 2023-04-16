@@ -11,3 +11,4 @@
     chdir: "{{ home }}/yay"
     cmd: "makepkg -si --noconfirm"
     creates: /usr/bin/yay
+  notify: remove yay git repository
