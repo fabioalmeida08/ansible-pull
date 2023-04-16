@@ -30,6 +30,7 @@
 - import_tasks: software/yay.yml
 - import_tasks: software/brave.yml
 - import_tasks: software/insomnia.yml
+- import_tasks: software/themes.yml
 # - import_tasks: software/prometheus.yml
 # - import_tasks: software/prometheus-node-exporter.yml
 # - import_tasks: software/grafana.yml
