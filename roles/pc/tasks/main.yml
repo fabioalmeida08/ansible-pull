@@ -16,7 +16,6 @@
 - import_tasks: software/mpv.yml
 - import_tasks: software/pavucontrol.yml
 - import_tasks: software/qbittorrent.yml
-- import_tasks: software/steam.yml
 - import_tasks: software/vim.yml
 - import_tasks: software/bat.yml
 - import_tasks: software/netdata.yml
@@ -29,6 +28,7 @@
 - import_tasks: software/yay.yml
 - import_tasks: software/brave.yml
 - import_tasks: software/insomnia.yml
+- import_tasks: software/steam.yml
 - import_tasks: software/themes.yml
 - import_tasks: software/code.yml
 #- import_tasks: software/dnsmasq.yml
