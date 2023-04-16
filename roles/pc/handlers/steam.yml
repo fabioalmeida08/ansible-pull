@@ -16,8 +16,14 @@
 - name: install proton ge
   unarchive:
     src: "https://github.com/GloriousEggroll/proton-ge-custom/releases/download/{{ proton_ge_latest['tag'] }}/{{ proton_ge_latest['tag']}}.tar.gz"
-    dest: "{{ home }}/.steam/root/compatibilitytools.d"
+    dest: "{{ home }}/.local/share/Steam/compatibilitytools.d"
     remote_src: yes
     owner: "{{ user }}"
     group: "{{ user }}"
     mode: "0755"
+
+- name: install mangohud
+  become_user: "{{ user }}"
+  tags: mango hud, packages, workstation-packages
+  shell:
+    cmd: yay -S mangohud lib32-mangohud --noconfirm
