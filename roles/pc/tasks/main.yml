@@ -1,9 +1,9 @@
 ## general configs
 
 - include_tasks: system_setup/main.yml
-- include_tasks: desktop_env/gnome/powersettings.yml
-- include_tasks: desktop_env/gnome/keybindings.yml
-- include_tasks: desktop_env/gnome/set_wallpaper.yml
+# - include_tasks: desktop_env/gnome/powersettings.yml
+# - include_tasks: desktop_env/gnome/keybindings.yml
+# - include_tasks: desktop_env/gnome/set_wallpaper.yml
 - include_tasks: dotfiles/main.yml
 
 ## install software
@@ -18,21 +18,21 @@
 - import_tasks: software/qbittorrent.yml
 - import_tasks: software/steam.yml
 - import_tasks: software/vim.yml
-# - import_tasks: software/prometheus.yml
-# - import_tasks: software/prometheus-node-exporter.yml
-# - import_tasks: software/grafana.yml
-- import_tasks: software/code.yml
-- import_tasks: software/net-tools.yml
-# - import_tasks: software/termius.yml
-- import_tasks: software/gnome-pop-shell.yml
-- import_tasks: software/fonts.yml
-- import_tasks: software/oh-my-zsh.yml
-# - import_tasks: software/virtualbox.yml
-# - import_tasks: software/vagrant.yml
 - import_tasks: software/bat.yml
 - import_tasks: software/netdata.yml
 - import_tasks: software/taskwarrior.yml
 - import_tasks: software/lsd.yml
+- import_tasks: software/code.yml
+- import_tasks: software/net-tools.yml
+- import_tasks: software/gnome-pop-shell.yml
+- import_tasks: software/fonts.yml
+- import_tasks: software/oh-my-zsh.yml
+# - import_tasks: software/prometheus.yml
+# - import_tasks: software/prometheus-node-exporter.yml
+# - import_tasks: software/grafana.yml
+# - import_tasks: software/termius.yml
+# - import_tasks: software/virtualbox.yml
+# - import_tasks: software/vagrant.yml
 
 ## containers
 
